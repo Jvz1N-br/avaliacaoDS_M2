@@ -32,7 +32,7 @@ router.post('/animais', async (req, res) => {
             `SELECT * FROM tutores 
             (nome, especie, raca, data_nascimento, tutor_id) 
             VALUES ($1, $2, $3, $4, $5) RETURNING *`, 
-        [nome, telefone, email]);
+        [nome, especie, raca, data_nascimento, tutor_id]);
         res.status(201).json(result.rows[0]);
     } catch (error){
         res.status(500).json({ erro: error.message});
@@ -48,7 +48,7 @@ router.put('/tutores/:id', async (req, res) => {
             `UPDATE animais
             SET nome=$1, especie=$2, raca=$3, data_nascimento=$4, tutor_id=$5
             WHERE id=$6`,
-            [nome, especie, raca, data_nascimento, tutor_id]
+            [nome, especie, raca, data_nascimento, tutor_id, id]
         );
         
         res.json({ mensagem: 'Animal atualizado com sucesso'})

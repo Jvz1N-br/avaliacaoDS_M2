@@ -3,7 +3,9 @@ const app = express();
 app.use(express.json());
 
 const tutoresRoutes = require('./src/routes/tutores')
+const animaisRoutes = require('./src/routes/animais');
 
+app.use(animaisRoutes);
 app.use(tutoresRoutes);
 
 
