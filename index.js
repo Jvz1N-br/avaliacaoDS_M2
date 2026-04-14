@@ -4,7 +4,9 @@ app.use(express.json());
 
 const tutoresRoutes = require('./src/routes/tutores')
 const animaisRoutes = require('./src/routes/animais');
+const consultasRoutes = require('./src/routes/consultas');
 
+app.use(consultasRoutes);
 app.use(animaisRoutes);
 app.use(tutoresRoutes);
 
