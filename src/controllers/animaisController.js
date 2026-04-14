@@ -1,4 +1,4 @@
-const service = require('../services/tutoresService');
+const service = require('../services/animaisService');
 
 const getAll = async (req, res) => {
   try {
@@ -15,7 +15,7 @@ const getById = async (req, res) => {
     const dados = await service.getById(id);
 
     if (!dados) {
-      return res.status(404).json({ mensagem: 'Não encontrado' });
+      return res.status(404).json({ mensagem: 'Animal não encontrado' });
     }
 
     res.json(dados);

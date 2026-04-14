@@ -1,17 +1,18 @@
 const express = require('express');
 const app = express();
-app.use(express.json());
 
-const tutoresRoutes = require('./src/routes/tutores')
+const tutoresRoutes = require('./src/routes/tutores');
 const animaisRoutes = require('./src/routes/animais');
 const consultasRoutes = require('./src/routes/consultas');
 
-app.use(consultasRoutes);
-app.use(animaisRoutes);
+app.use(express.json());
+
 app.use(tutoresRoutes);
+app.use(animaisRoutes);
+app.use(consultasRoutes);
 
+const PORT = 3000;
 
-const PORT = 3001;
 app.listen(PORT, () => {
-  console.log(`[SERVIDOR]: Clínica Veterinaria online em http://localhost:${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
