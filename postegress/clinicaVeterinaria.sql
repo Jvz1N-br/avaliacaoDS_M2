@@ -22,3 +22,4 @@ CREATE TABLE consultas (
   diagnostico TEXT,
   veterinario VARCHAR(100)
 );
+
